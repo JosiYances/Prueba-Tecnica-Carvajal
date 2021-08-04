@@ -1,0 +1,6 @@
+C:\Users\JOSIMAR HERNANDEZ\Desktop\PRUEBA CARVAJAL\TECNICA\API_MVC_CRUD\ServiciosWeb\bin\Debug\ServiciosWeb.dll
+C:\Users\JOSIMAR HERNANDEZ\Desktop\PRUEBA CARVAJAL\TECNICA\API_MVC_CRUD\ServiciosWeb\bin\Debug\ServiciosWeb.pdb
+C:\Users\JOSIMAR HERNANDEZ\Desktop\PRUEBA CARVAJAL\TECNICA\API_MVC_CRUD\ServiciosWeb\obj\Debug\ServiciosWeb.csproj.AssemblyReference.cache
+C:\Users\JOSIMAR HERNANDEZ\Desktop\PRUEBA CARVAJAL\TECNICA\API_MVC_CRUD\ServiciosWeb\obj\Debug\ServiciosWeb.csproj.CoreCompileInputs.cache
+C:\Users\JOSIMAR HERNANDEZ\Desktop\PRUEBA CARVAJAL\TECNICA\API_MVC_CRUD\ServiciosWeb\obj\Debug\ServiciosWeb.dll
+C:\Users\JOSIMAR HERNANDEZ\Desktop\PRUEBA CARVAJAL\TECNICA\API_MVC_CRUD\ServiciosWeb\obj\Debug\ServiciosWeb.pdb

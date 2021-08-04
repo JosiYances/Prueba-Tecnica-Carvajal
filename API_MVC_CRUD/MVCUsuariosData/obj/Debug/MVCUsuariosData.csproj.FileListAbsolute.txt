@@ -1,0 +1,12 @@
+C:\Users\JOSIMAR HERNANDEZ\Desktop\PRUEBA CARVAJAL\TECNICA\API_MVC_CRUD\MVCUsuariosData\bin\Debug\MVCUsuariosData.dll.config
+C:\Users\JOSIMAR HERNANDEZ\Desktop\PRUEBA CARVAJAL\TECNICA\API_MVC_CRUD\MVCUsuariosData\bin\Debug\MVCUsuariosData.dll
+C:\Users\JOSIMAR HERNANDEZ\Desktop\PRUEBA CARVAJAL\TECNICA\API_MVC_CRUD\MVCUsuariosData\bin\Debug\MVCUsuariosData.pdb
+C:\Users\JOSIMAR HERNANDEZ\Desktop\PRUEBA CARVAJAL\TECNICA\API_MVC_CRUD\MVCUsuariosData\bin\Debug\EntityFramework.dll
+C:\Users\JOSIMAR HERNANDEZ\Desktop\PRUEBA CARVAJAL\TECNICA\API_MVC_CRUD\MVCUsuariosData\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\JOSIMAR HERNANDEZ\Desktop\PRUEBA CARVAJAL\TECNICA\API_MVC_CRUD\MVCUsuariosData\bin\Debug\EntityFramework.xml
+C:\Users\JOSIMAR HERNANDEZ\Desktop\PRUEBA CARVAJAL\TECNICA\API_MVC_CRUD\MVCUsuariosData\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\JOSIMAR HERNANDEZ\Desktop\PRUEBA CARVAJAL\TECNICA\API_MVC_CRUD\MVCUsuariosData\obj\Debug\MVCUsuariosData.csproj.AssemblyReference.cache
+C:\Users\JOSIMAR HERNANDEZ\Desktop\PRUEBA CARVAJAL\TECNICA\API_MVC_CRUD\MVCUsuariosData\obj\Debug\MVCUsuariosData.csproj.CoreCompileInputs.cache
+C:\Users\JOSIMAR HERNANDEZ\Desktop\PRUEBA CARVAJAL\TECNICA\API_MVC_CRUD\MVCUsuariosData\obj\Debug\MVCUsuariosData.csproj.CopyComplete
+C:\Users\JOSIMAR HERNANDEZ\Desktop\PRUEBA CARVAJAL\TECNICA\API_MVC_CRUD\MVCUsuariosData\obj\Debug\MVCUsuariosData.dll
+C:\Users\JOSIMAR HERNANDEZ\Desktop\PRUEBA CARVAJAL\TECNICA\API_MVC_CRUD\MVCUsuariosData\obj\Debug\MVCUsuariosData.pdb

@@ -1,0 +1,45 @@
+﻿@model UsuarioT
+@{
+    ViewBag.Title = "Editar";
+}
+
+<h2>Editar</h2>
+
+<hr />
+
+<form method="post" action="@Url.Action("Editar", "Editar")">
+    <div>
+        <label>Nombre</label>
+        @Html.TextBoxFor(x => x.Nombre, new { @class = "form-control" })
+    </div>
+
+    <div>
+        <label>Apellido</label>
+        @Html.TextBoxFor(x => x.Apellido, new { @class = "form-control" })
+    </div>
+
+    <div>
+        <label>Tipo de Documento</label>
+        @Html.TextBoxFor(x => x.TipoID, new { @class = "form-control" })
+    </div>
+
+    <div>
+        <label>Identificación</label>
+        @Html.TextBoxFor(x => x.Identificación, new { @class = "form-control" })
+    </div>
+
+    <div>
+        <label>Contraseña</label>
+        @Html.TextBoxFor(x => x.Contrasena, new { @class = "form-control" })
+    </div>
+
+    <div>
+        <label>Correo</label>
+        @Html.TextBoxFor(x => x.Correo, new { @class = "form-control" })
+    </div>
+
+    <div>
+        <input type="submit" class="btn btn-success" value="Enviar"/>
+        
+    </div>
+</form>

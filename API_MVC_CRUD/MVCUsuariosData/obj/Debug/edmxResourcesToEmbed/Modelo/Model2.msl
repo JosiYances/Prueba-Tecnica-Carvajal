@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="AdmUsuariosModelTiposStoreContainer" CdmEntityContainer="AdmUsuariosEntities1">
+    <EntitySetMapping Name="TablaTipoDoc">
+      <EntityTypeMapping TypeName="AdmUsuariosModelTipos.TablaTipoDoc">
+        <MappingFragment StoreEntitySet="TablaTipoDoc">
+          <ScalarProperty Name="IdTipoDoc" ColumnName="IdTipoDoc" />
+          <ScalarProperty Name="TipoDocSelect" ColumnName="TipoDocSelect" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

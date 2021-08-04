@@ -1,0 +1,48 @@
+﻿@{
+    ViewBag.Title = "Index";
+}
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Control Usuarios</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+
+</head>
+<body>
+
+    <h1>Bienvenido a Carvajal</h1>
+
+    <h2>Por favor inicie sesión o registrate</h2>
+
+    <form method="post">
+
+        <h3>@ViewBag.Error</h3>
+
+        <div>
+            <p>Documento</p>
+            <input required type="text" name="Documento"> </br>
+
+            <p>Contraseña</p>
+
+            <input required type="password" name="Contrasena"> </br>
+
+            </br>
+
+            <div>
+                <input type="submit" class="Login" value="Iniciar Sesión">
+            </div>
+
+        </div>
+        </br>
+
+    </form>
+
+
+
+    <li>@Html.ActionLink("Registrate", "Registro", "Registro")</li>
+
+</body>
+</html>
