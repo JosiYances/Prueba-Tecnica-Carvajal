@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ServiciosWeb
 {
-    class TipoDocu
+    public class TipoDocu
     {
         public int IdTipoDoc { get; set; }
         public string TipoDocSelect { get; set; }

@@ -1,6 +1,10 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using ServiciosWeb;
+using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net.Http;
+using System.Net.Http.Formatting;
 using System.Web;
 using System.Web.Mvc;
 
@@ -8,82 +12,58 @@ namespace UsuariosWeb.Controllers
 {
     public class RegistroController : Controller
     {
-        // GET: Registro
         public ActionResult Registro()
         {
-            return View();
-        }
 
-        // GET: Registro/Details/5
-        public ActionResult Details(int id)
-        {
-            return View();
-        }
+            HttpClient clienteHttp = new HttpClient();
+            clienteHttp.BaseAddress = new Uri("https://localhost:44359/");
+            
+            var request = clienteHttp.GetAsync("api/TablaTipoDocs/Get").Result;
 
-        // GET: Registro/Create
-        public ActionResult Create()
-        {
-            return View();
-        }
-
-        // POST: Registro/Create
-        [HttpPost]
-        public ActionResult Create(FormCollection collection)
-        {
-            try
+            if (request.IsSuccessStatusCode)
             {
-                // TODO: Add insert logic here
+                var resultstring = request.Content.ReadAsStringAsync().Result;
+                var TipoD = JsonConvert.DeserializeObject<List<TipoDocu>>(resultstring);
 
-                return RedirectToAction("Index");
-            }
-            catch
-            {
+                List<SelectListItem> items = TipoD.ConvertAll(s =>
+                {
+                    return new SelectListItem()
+                    {
+                        Text = s.TipoDocSelect.ToString(),
+                        Value = s.TipoDocSelect.ToString(),
+                        Selected = false
+                    };
+                });
+
+                ViewBag.items = items;
                 return View();
-            }
-        }
 
-        // GET: Registro/Edit/5
-        public ActionResult Edit(int id)
-        {
+            }
+
             return View();
+                      
         }
 
-        // POST: Registro/Edit/5
+
         [HttpPost]
-        public ActionResult Edit(int id, FormCollection collection)
+        public ActionResult Registro(UsuarioT usuario)
         {
-            try
-            {
-                // TODO: Add update logic here
+            HttpClient clienteHttp = new HttpClient();
+            clienteHttp.BaseAddress = new Uri("https://localhost:44359/");
 
-                return RedirectToAction("Index");
-            }
-            catch
+            var request = clienteHttp.PostAsync("api/Usuarios/Post", usuario, new JsonMediaTypeFormatter()).Result;
+            if (request.IsSuccessStatusCode)
             {
-                return View();
-            }
-        }
+                var resultString = request.Content.ReadAsStringAsync().Result;
+                var Ingresado = JsonConvert.DeserializeObject<bool>(resultString);
 
-        // GET: Registro/Delete/5
-        public ActionResult Delete(int id)
-        {
-            return View();
-        }
-
-        // POST: Registro/Delete/5
-        [HttpPost]
-        public ActionResult Delete(int id, FormCollection collection)
-        {
-            try
-            {
-                // TODO: Add delete logic here
-
-                return RedirectToAction("Index");
+                if(Ingresado)
+                {
+                    return RedirectToAction("Index", "Home", new {mensaje = "C" });
+                }                
             }
-            catch
-            {
-                return View();
-            }
+
+            return RedirectToAction("Index", "Home", new {mensaje ="D" });
         }
     }
 }

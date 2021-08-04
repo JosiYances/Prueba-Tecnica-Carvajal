@@ -20,7 +20,7 @@
 
     <div>
         <label>Tipo de Documento</label>
-        @Html.TextBoxFor(x => x.TipoID, new { @class = "form-control" })
+        @Html.DropDownListFor(model => model.TipoID, (IEnumerable<SelectListItem>)ViewBag.items)
     </div>
 
     <div>

@@ -50,7 +50,7 @@ namespace APIUsuariosDatos.Controllers
         // PUT: api/Usuarios/5
         [HttpPut]
         public bool Put(Usuarios usuarios)
-        {
+        {           
             var ActUser = db.Usuarios.FirstOrDefault(x => x.Id == usuarios.Id);
             ActUser.Nombre = usuarios.Nombre;
             ActUser.Apellido = usuarios.Apellido;
@@ -61,54 +61,23 @@ namespace APIUsuariosDatos.Controllers
             return db.SaveChanges() > 0;
         }
 
-            // PUT: api/Usuarios/5
-            [ResponseType(typeof(void))]
-        public IHttpActionResult PutUsuarios(int id, Usuarios usuarios)
-        {
-            if (!ModelState.IsValid)
-            {
-                return BadRequest(ModelState);
-            }
-
-            if (id != usuarios.Id)
-            {
-                return BadRequest();
-            }
-
-            db.Entry(usuarios).State = EntityState.Modified;
-
-            try
-            {
-                db.SaveChanges();
-            }
-            catch (DbUpdateConcurrencyException)
-            {
-                if (!UsuariosExists(id))                
-                {
-                    return NotFound();
-                }
-                else
-                {
-                    throw;
-                }
-            }
-
-            return StatusCode(HttpStatusCode.NoContent);
-        }
-
         // POST: api/Usuarios
-        [ResponseType(typeof(Usuarios))]
-        public IHttpActionResult PostUsuarios(Usuarios usuarios)
+        [HttpPost]
+        public bool Post(Usuarios usuarios)
         {
-            if (!ModelState.IsValid)
+            var Compro = (from d in db.Usuarios
+                         where d.Identificación == usuarios.Identificación
+                         select d).FirstOrDefault();
+
+            if (Compro == null)
             {
-                return BadRequest(ModelState);
+
+                db.Usuarios.Add(usuarios);
+                return db.SaveChanges() > 0;
             }
 
-            db.Usuarios.Add(usuarios);
-            db.SaveChanges();
+            return false;
 
-            return CreatedAtRoute("DefaultApi", new { id = usuarios.Id }, usuarios);
         }
 
         // DELETE: api/Usuarios/5

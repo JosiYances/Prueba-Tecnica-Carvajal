@@ -19,9 +19,10 @@ namespace ServiciosWeb
         [Required]
         public int Identificación { get; set; }
         [Required]
-        [MinLength (5)]
+        [MinLength (5)]        
         public string Contrasena { get; set; }
         [Required]
+        [EmailAddress]
         public string Correo { get; set; }
     }
 }

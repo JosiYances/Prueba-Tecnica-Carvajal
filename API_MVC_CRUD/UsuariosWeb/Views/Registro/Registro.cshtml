@@ -1,18 +1,46 @@
-﻿
-@{
-    Layout = null;
-}
+﻿@model UsuarioT
 
-<!DOCTYPE html>
+<h2>Nuevo Usuario</h2>
 
-<html>
-<head>
-    <meta name="viewport" content="width=device-width" />
-    <title>Registro</title>
-</head>
-<body>
+<hr/>
+<a href="@Url.Action("Index", "Home")">Volver al inicio</a>
+
+
+
+<form method="post" action="@Url.Action("Registro", "Registro")" >
     <div>
+        <label>Nombre</label>
+        @Html.TextBoxFor(x => x.Nombre, new { @class = "form-control" })
+    </div>
+
+    <div>
+        <label>Apellido</label>
+        @Html.TextBoxFor(x => x.Apellido, new { @class = "form-control" })
+    </div>
+
+    <div>
+        <label>Tipo de Documento</label>
+        @Html.DropDownListFor(model => model.TipoID, (IEnumerable<SelectListItem>)ViewBag.items)
+    </div>
+
+    <div>
+        <label>Identificación</label>
+        @Html.TextBoxFor(x => x.Identificación, new { @class = "form-control" })
+    </div>
+
+    <div>
+        <label>Contraseña</label>       
+        @Html.TextBoxFor(x => x.Contrasena, new { @class = "form-control" })
+    </div>
+
+    <div>
+        <label>Correo</label>
+        @Html.TextBoxFor(x => x.Correo, new { @class = "form-control" })
+    </div>
+
+    <div>
+        <input type="submit" value="Registrar"/>
         
     </div>
-</body>
-</html>
+</form>
+

@@ -25,7 +25,27 @@ namespace UsuariosWeb.Controllers
                 var resultstring = request.Content.ReadAsStringAsync().Result;
                 var Toedit = JsonConvert.DeserializeObject<UsuarioT>(resultstring);
 
-                return View(Toedit);
+
+                var request1 = clienteHttp.GetAsync("api/TablaTipoDocs/Get").Result;
+
+                if (request1.IsSuccessStatusCode)
+                {
+                    var resultstring1 = request1.Content.ReadAsStringAsync().Result;
+                    var TipoD = JsonConvert.DeserializeObject<List<TipoDocu>>(resultstring1);
+
+                    List<SelectListItem> items = TipoD.ConvertAll(s =>
+                    {
+                        return new SelectListItem()
+                        {
+                            Text = s.TipoDocSelect.ToString(),
+                            Value = s.TipoDocSelect.ToString(),
+                            Selected = false
+                        };
+                    });
+
+                    ViewBag.items = items;
+                    return View(Toedit);
+                }
             }
 
             return View();
@@ -35,19 +55,18 @@ namespace UsuariosWeb.Controllers
         [HttpPost]
         public ActionResult Editar(UsuarioT usuario)
         {
-            HttpClient clienteHttp = new HttpClient();
-            clienteHttp.BaseAddress = new Uri("https://localhost:44359/");
+            HttpClient clienteHttp2 = new HttpClient();
+            clienteHttp2.BaseAddress = new Uri("https://localhost:44359/");
 
-            var request = clienteHttp.PutAsync("api/Usuarios/Put", usuario, new JsonMediaTypeFormatter()).Result;
-            if (request.IsSuccessStatusCode)
+            var request2 = clienteHttp2.PutAsync("api/Usuarios/Put", usuario, new JsonMediaTypeFormatter()).Result;
+            if (request2.IsSuccessStatusCode)
             {
-                var resultString = request.Content.ReadAsStringAsync().Result;
+                var resultString = request2.Content.ReadAsStringAsync().Result;
                 var Actualizado = JsonConvert.DeserializeObject<bool>(resultString);
 
                 if (Actualizado)
-                {
-                    ViewBag.Error = "Usuario actualizado";
-                    return RedirectToAction("Index", "Home");
+                {                                    
+                    return RedirectToAction("Index", "Home", new { mensaje = "A" });
                 }
             }
 

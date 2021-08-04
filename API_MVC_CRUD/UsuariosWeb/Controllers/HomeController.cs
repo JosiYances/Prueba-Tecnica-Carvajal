@@ -17,10 +17,34 @@ namespace UsuariosWeb.Controllers
     public class HomeController : Controller
     {
         
-        public ActionResult Index()
+        public ActionResult Index(string mensaje)
         {
+            if (mensaje == "A")
+            {
+                ViewBag.Error = "Usuario actualizado";
+                return View();
+            }
+
+            if (mensaje == "B")
+            {
+                ViewBag.Error = "Usuario eliminado";
+                return View();
+            }
+
+            if (mensaje == "C")
+            {
+                ViewBag.Error = "Usuario creado";
+                return View();
+            }
+
+            if (mensaje == "D")
+            {
+                ViewBag.Error = "Usuario ya existe";
+                return View();
+            }
 
             return View();
+            
         }
 
         [HttpPost]
@@ -41,7 +65,7 @@ namespace UsuariosWeb.Controllers
                 {
                     return RedirectToAction("Usuario","Usuario", apee);
                 }
-                ViewBag.Error = "Usuario o contrasena invalido";
+                ViewBag.Error = "Usuario o contrasena inválido";
                 return View();                
 
             }
@@ -49,7 +73,6 @@ namespace UsuariosWeb.Controllers
             ViewBag.Error = "Usuario o contrasena invalido";
             return View();
         }
-
 
     }
 }

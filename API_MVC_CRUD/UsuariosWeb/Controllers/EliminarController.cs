@@ -26,8 +26,7 @@ namespace UsuariosWeb.Controllers
                 
                 if(Toedit)
                 {
-                    ViewBag.Error = "Usuario actualizado";
-                    return RedirectToAction("Index", "Home");
+                    return RedirectToAction("Index", "Home", new { mensaje = "B" });
                 }
                 
             }

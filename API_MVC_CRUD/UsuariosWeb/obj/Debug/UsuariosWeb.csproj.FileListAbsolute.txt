@@ -53,8 +53,12 @@ C:\Users\JOSIMAR HERNANDEZ\Desktop\PRUEBA CARVAJAL\TECNICA\API_MVC_CRUD\Usuarios
 C:\Users\JOSIMAR HERNANDEZ\Desktop\PRUEBA CARVAJAL\TECNICA\API_MVC_CRUD\UsuariosWeb\bin\Antlr3.Runtime.dll
 C:\Users\JOSIMAR HERNANDEZ\Desktop\PRUEBA CARVAJAL\TECNICA\API_MVC_CRUD\UsuariosWeb\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
 C:\Users\JOSIMAR HERNANDEZ\Desktop\PRUEBA CARVAJAL\TECNICA\API_MVC_CRUD\UsuariosWeb\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\JOSIMAR HERNANDEZ\Desktop\PRUEBA CARVAJAL\TECNICA\API_MVC_CRUD\UsuariosWeb\bin\MVCUsuariosData.dll
 C:\Users\JOSIMAR HERNANDEZ\Desktop\PRUEBA CARVAJAL\TECNICA\API_MVC_CRUD\UsuariosWeb\bin\Newtonsoft.Json.dll
 C:\Users\JOSIMAR HERNANDEZ\Desktop\PRUEBA CARVAJAL\TECNICA\API_MVC_CRUD\UsuariosWeb\bin\ServiciosWeb.dll
+C:\Users\JOSIMAR HERNANDEZ\Desktop\PRUEBA CARVAJAL\TECNICA\API_MVC_CRUD\UsuariosWeb\bin\System.Net.Http.Extensions.dll
+C:\Users\JOSIMAR HERNANDEZ\Desktop\PRUEBA CARVAJAL\TECNICA\API_MVC_CRUD\UsuariosWeb\bin\System.Net.Http.Formatting.dll
+C:\Users\JOSIMAR HERNANDEZ\Desktop\PRUEBA CARVAJAL\TECNICA\API_MVC_CRUD\UsuariosWeb\bin\System.Net.Http.Primitives.dll
 C:\Users\JOSIMAR HERNANDEZ\Desktop\PRUEBA CARVAJAL\TECNICA\API_MVC_CRUD\UsuariosWeb\bin\System.Web.Helpers.dll
 C:\Users\JOSIMAR HERNANDEZ\Desktop\PRUEBA CARVAJAL\TECNICA\API_MVC_CRUD\UsuariosWeb\bin\System.Web.Mvc.dll
 C:\Users\JOSIMAR HERNANDEZ\Desktop\PRUEBA CARVAJAL\TECNICA\API_MVC_CRUD\UsuariosWeb\bin\System.Web.Optimization.dll
@@ -63,6 +67,9 @@ C:\Users\JOSIMAR HERNANDEZ\Desktop\PRUEBA CARVAJAL\TECNICA\API_MVC_CRUD\Usuarios
 C:\Users\JOSIMAR HERNANDEZ\Desktop\PRUEBA CARVAJAL\TECNICA\API_MVC_CRUD\UsuariosWeb\bin\System.Web.WebPages.dll
 C:\Users\JOSIMAR HERNANDEZ\Desktop\PRUEBA CARVAJAL\TECNICA\API_MVC_CRUD\UsuariosWeb\bin\System.Web.WebPages.Razor.dll
 C:\Users\JOSIMAR HERNANDEZ\Desktop\PRUEBA CARVAJAL\TECNICA\API_MVC_CRUD\UsuariosWeb\bin\WebGrease.dll
+C:\Users\JOSIMAR HERNANDEZ\Desktop\PRUEBA CARVAJAL\TECNICA\API_MVC_CRUD\UsuariosWeb\bin\EntityFramework.dll
+C:\Users\JOSIMAR HERNANDEZ\Desktop\PRUEBA CARVAJAL\TECNICA\API_MVC_CRUD\UsuariosWeb\bin\MVCUsuariosData.pdb
+C:\Users\JOSIMAR HERNANDEZ\Desktop\PRUEBA CARVAJAL\TECNICA\API_MVC_CRUD\UsuariosWeb\bin\MVCUsuariosData.dll.config
 C:\Users\JOSIMAR HERNANDEZ\Desktop\PRUEBA CARVAJAL\TECNICA\API_MVC_CRUD\UsuariosWeb\bin\ServiciosWeb.pdb
 C:\Users\JOSIMAR HERNANDEZ\Desktop\PRUEBA CARVAJAL\TECNICA\API_MVC_CRUD\UsuariosWeb\bin\System.Web.Helpers.xml
 C:\Users\JOSIMAR HERNANDEZ\Desktop\PRUEBA CARVAJAL\TECNICA\API_MVC_CRUD\UsuariosWeb\bin\System.Web.Mvc.xml
@@ -74,6 +81,7 @@ C:\Users\JOSIMAR HERNANDEZ\Desktop\PRUEBA CARVAJAL\TECNICA\API_MVC_CRUD\Usuarios
 C:\Users\JOSIMAR HERNANDEZ\Desktop\PRUEBA CARVAJAL\TECNICA\API_MVC_CRUD\UsuariosWeb\bin\Newtonsoft.Json.xml
 C:\Users\JOSIMAR HERNANDEZ\Desktop\PRUEBA CARVAJAL\TECNICA\API_MVC_CRUD\UsuariosWeb\bin\Antlr3.Runtime.pdb
 C:\Users\JOSIMAR HERNANDEZ\Desktop\PRUEBA CARVAJAL\TECNICA\API_MVC_CRUD\UsuariosWeb\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Users\JOSIMAR HERNANDEZ\Desktop\PRUEBA CARVAJAL\TECNICA\API_MVC_CRUD\UsuariosWeb\bin\EntityFramework.xml
 C:\Users\JOSIMAR HERNANDEZ\Desktop\PRUEBA CARVAJAL\TECNICA\API_MVC_CRUD\UsuariosWeb\bin\es\System.Web.Helpers.resources.dll
 C:\Users\JOSIMAR HERNANDEZ\Desktop\PRUEBA CARVAJAL\TECNICA\API_MVC_CRUD\UsuariosWeb\bin\es\System.Web.Mvc.resources.dll
 C:\Users\JOSIMAR HERNANDEZ\Desktop\PRUEBA CARVAJAL\TECNICA\API_MVC_CRUD\UsuariosWeb\bin\es\System.Web.Optimization.resources.dll
@@ -86,11 +94,3 @@ C:\Users\JOSIMAR HERNANDEZ\Desktop\PRUEBA CARVAJAL\TECNICA\API_MVC_CRUD\Usuarios
 C:\Users\JOSIMAR HERNANDEZ\Desktop\PRUEBA CARVAJAL\TECNICA\API_MVC_CRUD\UsuariosWeb\obj\Debug\UsuariosWeb.csproj.CopyComplete
 C:\Users\JOSIMAR HERNANDEZ\Desktop\PRUEBA CARVAJAL\TECNICA\API_MVC_CRUD\UsuariosWeb\obj\Debug\UsuariosWeb.dll
 C:\Users\JOSIMAR HERNANDEZ\Desktop\PRUEBA CARVAJAL\TECNICA\API_MVC_CRUD\UsuariosWeb\obj\Debug\UsuariosWeb.pdb
-C:\Users\JOSIMAR HERNANDEZ\Desktop\PRUEBA CARVAJAL\TECNICA\API_MVC_CRUD\UsuariosWeb\bin\MVCUsuariosData.dll
-C:\Users\JOSIMAR HERNANDEZ\Desktop\PRUEBA CARVAJAL\TECNICA\API_MVC_CRUD\UsuariosWeb\bin\EntityFramework.dll
-C:\Users\JOSIMAR HERNANDEZ\Desktop\PRUEBA CARVAJAL\TECNICA\API_MVC_CRUD\UsuariosWeb\bin\MVCUsuariosData.pdb
-C:\Users\JOSIMAR HERNANDEZ\Desktop\PRUEBA CARVAJAL\TECNICA\API_MVC_CRUD\UsuariosWeb\bin\MVCUsuariosData.dll.config
-C:\Users\JOSIMAR HERNANDEZ\Desktop\PRUEBA CARVAJAL\TECNICA\API_MVC_CRUD\UsuariosWeb\bin\EntityFramework.xml
-C:\Users\JOSIMAR HERNANDEZ\Desktop\PRUEBA CARVAJAL\TECNICA\API_MVC_CRUD\UsuariosWeb\bin\System.Net.Http.Extensions.dll
-C:\Users\JOSIMAR HERNANDEZ\Desktop\PRUEBA CARVAJAL\TECNICA\API_MVC_CRUD\UsuariosWeb\bin\System.Net.Http.Formatting.dll
-C:\Users\JOSIMAR HERNANDEZ\Desktop\PRUEBA CARVAJAL\TECNICA\API_MVC_CRUD\UsuariosWeb\bin\System.Net.Http.Primitives.dll
