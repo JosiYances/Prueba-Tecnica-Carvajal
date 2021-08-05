@@ -15,23 +15,32 @@ namespace UsuariosWeb.Controllers
         // GET: Eliminar/Edit/5
         public ActionResult Eliminar(int id)
         {
-            HttpClient clienteHttp = new HttpClient();
-            clienteHttp.BaseAddress = new Uri("https://localhost:44359/");
+            try 
+            { 
 
-            var request = clienteHttp.DeleteAsync("api/Usuarios/Delete?id=" + id).Result;
-            if (request.IsSuccessStatusCode)
-            {
-                var resultstring = request.Content.ReadAsStringAsync().Result;
-                var Toedit = JsonConvert.DeserializeObject<bool>(resultstring);
-                
-                if(Toedit)
+                HttpClient clienteHttp = new HttpClient();
+                clienteHttp.BaseAddress = new Uri("https://localhost:44359/");
+
+                var request = clienteHttp.DeleteAsync("api/Usuarios/Delete?id=" + id).Result;
+                if (request.IsSuccessStatusCode)
                 {
-                    return RedirectToAction("Index", "Home", new { mensaje = "B" });
+                    var resultstring = request.Content.ReadAsStringAsync().Result;
+                    var Toedit = JsonConvert.DeserializeObject<bool>(resultstring);
+                    
+                    if(Toedit)
+                    {
+                        return RedirectToAction("Index", "Home", new { mensaje = "B" });
+                    }
+                    
                 }
-                
-            }
 
-            return View();
+                return View();
+            }
+            catch (Exception ex)
+            {
+                return RedirectToAction("Index", "Home", new { mensaje = "F" });
+            }
         }
+            
     }
 }

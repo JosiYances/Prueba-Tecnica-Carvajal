@@ -12,8 +12,14 @@ namespace UsuariosWeb.Controllers
         // GET: Usuario
         public ActionResult Usuario(UsuarioT MiUser)
         {
-          
-            return View(MiUser);
+            try 
+            {            
+                return View(MiUser);
+            }
+            catch (Exception ex) 
+            { 
+                return RedirectToAction("Index", "Home", new { mensaje = "F" }); 
+            }
         }
 
         

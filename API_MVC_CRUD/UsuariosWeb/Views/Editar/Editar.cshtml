@@ -4,42 +4,49 @@
 }
 
 <h2>Editar</h2>
-
 <hr />
 
 <form method="post" action="@Url.Action("Editar", "Editar")">
+    <br/>
     <div>
         <label>Nombre</label>
+        <br />
         @Html.TextBoxFor(x => x.Nombre, new { @class = "form-control" })
     </div>
 
     <div>
         <label>Apellido</label>
+        <br />
         @Html.TextBoxFor(x => x.Apellido, new { @class = "form-control" })
     </div>
 
     <div>
         <label>Tipo de Documento</label>
+        <br />
         @Html.DropDownListFor(model => model.TipoID, (IEnumerable<SelectListItem>)ViewBag.items)
     </div>
 
     <div>
         <label>Identificación</label>
-        @Html.TextBoxFor(x => x.Identificación, new { @class = "form-control" })
+        <br />
+        @Html.TextBoxFor(x => x.Identificación, new { type = "numb" })
     </div>
 
     <div>
         <label>Contraseña</label>
-        @Html.TextBoxFor(x => x.Contrasena, new { @class = "form-control" })
+        <br />
+        @Html.TextBoxFor(x => x.Contrasena, new { minlength = "(4)" })
     </div>
 
     <div>
         <label>Correo</label>
+        <br />
         @Html.TextBoxFor(x => x.Correo, new { @class = "form-control" })
     </div>
 
     <div>
-        <input type="submit" class="btn btn-success" value="Enviar"/>
-        
+        <br />
+        <input type="submit" class="btn btn-success" value="Enviar" />
+
     </div>
 </form>

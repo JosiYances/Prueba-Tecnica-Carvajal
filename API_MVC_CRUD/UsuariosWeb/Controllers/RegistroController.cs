@@ -14,56 +14,71 @@ namespace UsuariosWeb.Controllers
     {
         public ActionResult Registro()
         {
+            try 
+            { 
+                HttpClient clienteHttp = new HttpClient();
+                clienteHttp.BaseAddress = new Uri("https://localhost:44359/");                
+                var request = clienteHttp.GetAsync("api/TablaTipoDocs/Get").Result;
 
-            HttpClient clienteHttp = new HttpClient();
-            clienteHttp.BaseAddress = new Uri("https://localhost:44359/");
-            
-            var request = clienteHttp.GetAsync("api/TablaTipoDocs/Get").Result;
-
-            if (request.IsSuccessStatusCode)
-            {
-                var resultstring = request.Content.ReadAsStringAsync().Result;
-                var TipoD = JsonConvert.DeserializeObject<List<TipoDocu>>(resultstring);
-
-                List<SelectListItem> items = TipoD.ConvertAll(s =>
+                if (request.IsSuccessStatusCode)
                 {
-                    return new SelectListItem()
+                    var resultstring = request.Content.ReadAsStringAsync().Result;
+                    var TipoD = JsonConvert.DeserializeObject<List<TipoDocu>>(resultstring);
+
+                    List<SelectListItem> items = TipoD.ConvertAll(s =>
                     {
-                        Text = s.TipoDocSelect.ToString(),
-                        Value = s.TipoDocSelect.ToString(),
-                        Selected = false
-                    };
-                });
-
-                ViewBag.items = items;
+                        return new SelectListItem()
+                        {
+                            Text = s.TipoDocSelect.ToString(),
+                            Value = s.TipoDocSelect.ToString(),
+                            Selected = false
+                        };
+                    });
+                    ViewBag.items = items;
+                    return View();
+                }
                 return View();
-
             }
-
-            return View();
-                      
+            catch
+            {
+                return RedirectToAction("Index", "Home", new { mensaje = "F" });
+            }
         }
 
 
         [HttpPost]
         public ActionResult Registro(UsuarioT usuario)
         {
-            HttpClient clienteHttp = new HttpClient();
-            clienteHttp.BaseAddress = new Uri("https://localhost:44359/");
+            try 
+            { 
+                if(ModelState.IsValid)
+                { 
+                    HttpClient clienteHttp = new HttpClient();
+                    clienteHttp.BaseAddress = new Uri("https://localhost:44359/");
 
-            var request = clienteHttp.PostAsync("api/Usuarios/Post", usuario, new JsonMediaTypeFormatter()).Result;
-            if (request.IsSuccessStatusCode)
-            {
-                var resultString = request.Content.ReadAsStringAsync().Result;
-                var Ingresado = JsonConvert.DeserializeObject<bool>(resultString);
+                    var request = clienteHttp.PostAsync("api/Usuarios/Post", usuario, new JsonMediaTypeFormatter()).Result;
+                    if (request.IsSuccessStatusCode)
+                    {
+                        var resultString = request.Content.ReadAsStringAsync().Result;
+                        var Ingresado = JsonConvert.DeserializeObject<bool>(resultString);
 
-                if(Ingresado)
+                        if(Ingresado)
+                        {
+                            return RedirectToAction("Index", "Home", new {mensaje = "C" });
+                        }                
+                    }
+
+                    return RedirectToAction("Index", "Home", new {mensaje ="D" });
+                }
+                else
                 {
-                    return RedirectToAction("Index", "Home", new {mensaje = "C" });
-                }                
+                    return RedirectToAction("Index", "Home", new { mensaje = "E" });
+                }
             }
-
-            return RedirectToAction("Index", "Home", new {mensaje ="D" });
+            catch 
+            {
+                return RedirectToAction("Index", "Home", new { mensaje = "F" });
+            }
         }
     }
 }

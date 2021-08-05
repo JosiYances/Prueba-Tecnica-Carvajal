@@ -16,61 +16,82 @@ namespace UsuariosWeb.Controllers
         [HttpGet]
         public ActionResult Editar(int id)
         {
-            HttpClient clienteHttp = new HttpClient();
-            clienteHttp.BaseAddress = new Uri("https://localhost:44359/");
-
-            var request = clienteHttp.GetAsync("api/Usuarios/Get?id=" + id).Result;
-            if (request.IsSuccessStatusCode) 
+            try
             { 
-                var resultstring = request.Content.ReadAsStringAsync().Result;
-                var Toedit = JsonConvert.DeserializeObject<UsuarioT>(resultstring);
+                HttpClient clienteHttp = new HttpClient();
+                clienteHttp.BaseAddress = new Uri("https://localhost:44359/");
+
+                var request = clienteHttp.GetAsync("api/Usuarios/Get?id=" + id).Result;
+                if (request.IsSuccessStatusCode) 
+                { 
+                    var resultstring = request.Content.ReadAsStringAsync().Result;
+                    var Toedit = JsonConvert.DeserializeObject<UsuarioT>(resultstring);
 
 
-                var request1 = clienteHttp.GetAsync("api/TablaTipoDocs/Get").Result;
+                    var request1 = clienteHttp.GetAsync("api/TablaTipoDocs/Get").Result;
 
-                if (request1.IsSuccessStatusCode)
-                {
-                    var resultstring1 = request1.Content.ReadAsStringAsync().Result;
-                    var TipoD = JsonConvert.DeserializeObject<List<TipoDocu>>(resultstring1);
-
-                    List<SelectListItem> items = TipoD.ConvertAll(s =>
+                    if (request1.IsSuccessStatusCode)
                     {
-                        return new SelectListItem()
+                        var resultstring1 = request1.Content.ReadAsStringAsync().Result;
+                        var TipoD = JsonConvert.DeserializeObject<List<TipoDocu>>(resultstring1);
+
+                        List<SelectListItem> items = TipoD.ConvertAll(s =>
                         {
-                            Text = s.TipoDocSelect.ToString(),
-                            Value = s.TipoDocSelect.ToString(),
-                            Selected = false
-                        };
-                    });
+                            return new SelectListItem()
+                            {
+                                Text = s.TipoDocSelect.ToString(),
+                                Value = s.TipoDocSelect.ToString(),
+                                Selected = false
+                            };
+                        });
 
-                    ViewBag.items = items;
-                    return View(Toedit);
+                        ViewBag.items = items;
+                        return View(Toedit);
+                    }
                 }
-            }
 
-            return View();
+                return View();
+            }
+            catch 
+            {
+                return RedirectToAction("Index", "Home", new { mensaje = "F" });
+            }
         }
 
         // POST: Editar/Edit/5
         [HttpPost]
         public ActionResult Editar(UsuarioT usuario)
         {
-            HttpClient clienteHttp2 = new HttpClient();
-            clienteHttp2.BaseAddress = new Uri("https://localhost:44359/");
-
-            var request2 = clienteHttp2.PutAsync("api/Usuarios/Put", usuario, new JsonMediaTypeFormatter()).Result;
-            if (request2.IsSuccessStatusCode)
+            try
             {
-                var resultString = request2.Content.ReadAsStringAsync().Result;
-                var Actualizado = JsonConvert.DeserializeObject<bool>(resultString);
+                if (ModelState.IsValid)
+                {
+                    HttpClient clienteHttp2 = new HttpClient();
+                    clienteHttp2.BaseAddress = new Uri("https://localhost:44359/");
 
-                if (Actualizado)
-                {                                    
-                    return RedirectToAction("Index", "Home", new { mensaje = "A" });
+                    var request2 = clienteHttp2.PutAsync("api/Usuarios/Put", usuario, new JsonMediaTypeFormatter()).Result;
+                    if (request2.IsSuccessStatusCode)
+                    {
+                        var resultString = request2.Content.ReadAsStringAsync().Result;
+                        var Actualizado = JsonConvert.DeserializeObject<bool>(resultString);
+
+                        if (Actualizado)
+                        {
+                            return RedirectToAction("Index", "Home", new { mensaje = "A" });
+                        }
+                    }
+                    return View();
                 }
-            }
+                else
+                {
+                    return RedirectToAction("Index", "Home", new { mensaje = "E" });
+                }
 
-             return View();
+            }
+            catch
+            {
+                return RedirectToAction("Index", "Home", new { mensaje = "F" });
+            }
         }
     }
 }

@@ -9,6 +9,7 @@ using System.Net.Http;
 using System.Web.Http;
 using System.Web.Http.Description;
 using MVCUsuariosData.Modelo;
+using Newtonsoft.Json.Linq;
 using ServiciosWeb;
 
 namespace APIUsuariosDatos.Controllers
@@ -50,34 +51,37 @@ namespace APIUsuariosDatos.Controllers
         // PUT: api/Usuarios/5
         [HttpPut]
         public bool Put(Usuarios usuarios)
-        {           
-            var ActUser = db.Usuarios.FirstOrDefault(x => x.Id == usuarios.Id);
-            ActUser.Nombre = usuarios.Nombre;
-            ActUser.Apellido = usuarios.Apellido;
-            ActUser.TipoID = usuarios.TipoID;
-            ActUser.Identificación = usuarios.Identificación;
-            ActUser.Contrasena = usuarios.Contrasena;
-            ActUser.Correo = usuarios.Correo;
-            return db.SaveChanges() > 0;
+        {
+            JObject response = new JObject();
+           
+                    var ActUser = db.Usuarios.FirstOrDefault(x => x.Id == usuarios.Id);
+                    ActUser.Nombre = usuarios.Nombre;
+                    ActUser.Apellido = usuarios.Apellido;
+                    ActUser.TipoID = usuarios.TipoID;
+                    ActUser.Identificación = usuarios.Identificación;
+                    ActUser.Contrasena = usuarios.Contrasena;
+                    ActUser.Correo = usuarios.Correo;
+                    return db.SaveChanges() > 0;          
+           
         }
 
         // POST: api/Usuarios
         [HttpPost]
         public bool Post(Usuarios usuarios)
-        {
-            var Compro = (from d in db.Usuarios
-                         where d.Identificación == usuarios.Identificación
-                         select d).FirstOrDefault();
+        {              
+             var Compro = (from d in db.Usuarios
+                           where d.Identificación == usuarios.Identificación
+                           select d).FirstOrDefault();
 
-            if (Compro == null)
-            {
+             if (Compro == null)
+             {
 
-                db.Usuarios.Add(usuarios);
-                return db.SaveChanges() > 0;
-            }
+                 db.Usuarios.Add(usuarios);
+                 return db.SaveChanges() > 0;
+             }
 
-            return false;
-
+             return false;
+                          
         }
 
         // DELETE: api/Usuarios/5

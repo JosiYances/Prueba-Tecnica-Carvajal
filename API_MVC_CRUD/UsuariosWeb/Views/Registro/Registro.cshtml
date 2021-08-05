@@ -4,37 +4,43 @@
 
 <hr/>
 <a href="@Url.Action("Index", "Home")">Volver al inicio</a>
-
-
+<br />
+<br />
 
 <form method="post" action="@Url.Action("Registro", "Registro")" >
     <div>
         <label>Nombre</label>
+        <br/>
         @Html.TextBoxFor(x => x.Nombre, new { @class = "form-control" })
     </div>
 
     <div>
         <label>Apellido</label>
+        <br />
         @Html.TextBoxFor(x => x.Apellido, new { @class = "form-control" })
     </div>
 
     <div>
         <label>Tipo de Documento</label>
+        <br />
         @Html.DropDownListFor(model => model.TipoID, (IEnumerable<SelectListItem>)ViewBag.items)
     </div>
 
     <div>
         <label>Identificación</label>
+        <br />
         @Html.TextBoxFor(x => x.Identificación, new { @class = "form-control" })
     </div>
 
     <div>
-        <label>Contraseña</label>       
+        <label>Contraseña</label>
+        <br />
         @Html.TextBoxFor(x => x.Contrasena, new { @class = "form-control" })
     </div>
 
     <div>
         <label>Correo</label>
+        <br />
         @Html.TextBoxFor(x => x.Correo, new { @class = "form-control" })
     </div>
 

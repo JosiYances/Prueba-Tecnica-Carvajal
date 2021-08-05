@@ -43,36 +43,54 @@ namespace UsuariosWeb.Controllers
                 return View();
             }
 
+            if (mensaje == "E")
+            {
+                ViewBag.Error = "Error de formato";
+                return View();
+            }
+            if (mensaje == "F")
+            {
+                ViewBag.Error = "Verifica la conexión con la base de datos";
+                return View();
+            }
             return View();
-            
+
         }
 
         [HttpPost]
         public ActionResult Index(int Documento, string Contrasena)
         {
-            HttpClient clienteHttp = new HttpClient();
-            clienteHttp.BaseAddress = new Uri("https://localhost:44359/");
+            try 
+            { 
+                HttpClient clienteHttp = new HttpClient();
+                clienteHttp.BaseAddress = new Uri("https://localhost:44359/");
 
-            var request = clienteHttp.GetAsync("api/Usuarios/GetU?Documento=" + Documento).Result;
+                var request = clienteHttp.GetAsync("api/Usuarios/GetU?Documento=" + Documento).Result;
 
         
-            
-            if (request.IsSuccessStatusCode)
-            {
-                var resultstring = request.Content.ReadAsStringAsync().Result;
-                var apee = JsonConvert.DeserializeObject<UsuarioT>(resultstring);
-                if (apee.Contrasena == Contrasena)
+                
+                if (request.IsSuccessStatusCode)
                 {
-                    return RedirectToAction("Usuario","Usuario", apee);
+                    var resultstring = request.Content.ReadAsStringAsync().Result;
+                    var apee = JsonConvert.DeserializeObject<UsuarioT>(resultstring);
+                    if (apee.Contrasena == Contrasena)
+                    {
+                        return RedirectToAction("Usuario","Usuario", apee);
+                    }
+                    ViewBag.Error = "Usuario o contrasena inválido";
+                    return View();                
+
                 }
-                ViewBag.Error = "Usuario o contrasena inválido";
-                return View();                
 
+                ViewBag.Error = "Usuario o contrasena invalido";
+                return View();
             }
-
-            ViewBag.Error = "Usuario o contrasena invalido";
-            return View();
+            catch (Exception ex)
+            {
+                ViewBag.Error = "Verifique los datos y vuelva a intentar";
+                return View();
+            }
         }
-
+    
     }
 }
