@@ -5,27 +5,12 @@
     "version": "0.2.0",
     "configurations": [
         {
-            "type": "java",
-            "name": "Launch Java Program",
+            "type": "chrome",
             "request": "launch",
-            "mainClass": ""
-        },
-        {"name":"Run Windows","request":"launch","type":"reactnative","cwd":"${workspaceFolder}","enableDebug":false,"platform":"windows"},
-
-        {
             "name": "Launch Chrome",
-            "request": "launch",
-            "type": "pwa-chrome",
-            "url": "http://localhost:8080",
-            "webRoot": "${workspaceFolder}"
-        },
-      
-        {
-            "type": "pwa-chrome",
-            "request": "launch",
-            "name": "Launch Chrome against localhost",
-            "url": "http://localhost:8080",
+            "url": "http://localhost:5500",
             "webRoot": "${workspaceFolder}"
         }
+        
     ]
 }

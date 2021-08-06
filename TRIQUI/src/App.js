@@ -1,9 +1,9 @@
 import logo from './logo.svg';
-import { useState } from "react";
+import { useState } from "react"; //ok
 import './App.css';
 import Board from './Componentes/Tabla/Tabla';
 import Square from './Componentes/Squares/Squares';
-import ScoreBoard from './Componentes/Scoreboard/Scoreboard';
+
 
 const winningPositions= [
   [0, 1, 2],
@@ -17,13 +17,13 @@ const winningPositions= [
 ];
 
 const App = () => {
-  const [turn, setTurn] = useState('x');
-  const [squares, setSquares] = useState(Array(9).fill(null));
+  const [turn, setTurn] = useState('x'); //ok
+  const [squares, setSquares] = useState(Array(9).fill(null));//ok
   const [winningSquares, setWinningSquares]= useState([]);
-  const [score, serScore] = useState({
+  const [score, setScore] = useState({
     o: 0,
     x: 0,
-  });
+  });//ok
 
   const reset =() => {
     setTurn('o');
@@ -39,28 +39,29 @@ const App = () => {
 
       return
     }
+  
     if(!newSquares.includes(null)){
-      endGame(null,Array.from(Array(10).keys()));
+      endGame(null, Array.from(Array(10).keys()));
       return
     }
 
     setTurn(turn === 'o'? 'x': 'o');
   }
 
-  const handClick = Square =>{
+  const handClick = square => {
 
     let newSquares = [...squares];
-    newSquares.splice(Square, 1, turn);
+    newSquares.splice(square, 1, turn);
     setSquares(newSquares);
     checkForWinner(newSquares);
   }
 
-  const endGame = (result, winningPositions) =>{
+  const endGame = (result, winningPositions) => {
     setTurn(null);
-    if(result!=null){
-      setSquares({
+    if(result !== null) {
+      setScore({
         ...score, 
-        [result]:score[result]+1,
+        [result]: score[result] +1,
       })
     }
     setWinningSquares(winningPositions);
@@ -71,9 +72,9 @@ const App = () => {
   }
 
   return (
-    <div className="Container">
-      <Tabla winningSquares={winningSquares} turn={turn} squeares={squares} onClick={handClick}/>
-      <ScoreBoard scoreo={score.o} scorex={score.x}/>
+    <div className="container">
+      <Board winningSquares={winningSquares} turn={turn} squares={squares} onClick={handClick}/>
+      
     </div>
   );
 }

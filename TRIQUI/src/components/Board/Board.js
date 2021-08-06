@@ -2,10 +2,10 @@ import Square from "../Squares/Squares";
 import './Board.css'
 
 
-const Board = ({Square, onClick, turn, winningSquares }) => {
+const Board = ({squares, onClick, turn, winningSquares }) => {
 
-    const createSquares = value => (
-        values.map( values =>(
+    const createSquares = values => (
+        values.map( value => (
             <Square
             winner={winningSquares.includes(value)}
             turn = {turn}

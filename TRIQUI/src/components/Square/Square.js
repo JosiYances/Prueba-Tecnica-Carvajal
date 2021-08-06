@@ -1,19 +1,19 @@
 import './Square.css';
-import className from 'classnames';
+import classNames from 'classnames';
 
 
 
 const Square =({ value, onClick, turn, winner }) => {
 
     const handleClick =() => {
-        turn !== null && value === null && onClick();
+        (turn !== null && value === null) && onClick();
     }
     
-    let squareClass = className({
-        Square: true,
-        [`square--${value}`]: value!==null,
-        winner: winner,
-    })
+    let squareClass = classNames({
+        square: true,
+        [`square--${value}`]: value !== null,
+        winner: winner
+    });
 
 
     return (
