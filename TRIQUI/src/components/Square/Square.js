@@ -1,25 +1,23 @@
 import './Square.css';
 import classNames from 'classnames';
 
+const Square = ({ value, onClick, turn, winner }) => {
 
-
-const Square =({ value, onClick, turn, winner }) => {
-
-    const handleClick =() => {
+    const handleClick = () => {
         (turn !== null && value === null) && onClick();
     }
-    
+
     let squareClass = classNames({
         square: true,
         [`square--${value}`]: value !== null,
-        winner: winner
+        winner: winner,
     });
 
-
     return (
-        <div className ={squareClass} onClick={() => handleClick()}>
+        <div className={squareClass} onClick={() => handleClick()}>
 
-        </div>
+        </div> 
     )
 }
+
 export default Square;
